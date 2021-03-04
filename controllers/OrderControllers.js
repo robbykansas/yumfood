@@ -42,10 +42,12 @@ class OrderControllers{
           message: "cannot find dish"
         }
       } else {
+        const Total = req.body.amount*findDish.price
         const obj = {
           DishId: findDish.id,
           amount: req.body.amount,
-          request: req.body.request
+          request: req.body.request,
+          Total: Total
         }
         const addOrder = await Order.create(obj)
         res.status(201).json(addOrder)

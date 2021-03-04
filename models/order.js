@@ -18,15 +18,16 @@ module.exports = (sequelize, DataTypes) => {
     amount: {
       type: DataTypes.INTEGER,
       validate: {
-        isNumeric: {message: 'amount must be in numeric'},
+        isNumeric: {msg: 'amount must be in numeric'},
         min: {
           args: 1,
-          message: 'amount must be greater than 1'
+          msg: 'amount must be greater than 1'
         }
       }
     },
     request: DataTypes.STRING,
-    DishId: DataTypes.INTEGER
+    DishId: DataTypes.INTEGER,
+    Total: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Order',

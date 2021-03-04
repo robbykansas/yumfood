@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       type: DataTypes.STRING,
       validate: {
-        notEmpty: {message: 'name cannot be empty'}
+        notEmpty: {msg: 'name cannot be empty'}
       }
     },
     price: {
